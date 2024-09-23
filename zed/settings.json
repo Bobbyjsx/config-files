@@ -1,0 +1,285 @@
+// Zed Settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  // Language Models
+  "language_models": {
+    "openai": {
+      "version": "1",
+      "api_url": "https://api.openai.com/v1",
+      "low_speed_timeout_in_seconds": 10
+    }
+  },
+
+  // Theme and Mode
+  "theme": "Rosé Pine",
+  "vim_mode": true,
+
+  // UI Settings
+  "ui_font_size": 13,
+
+  // Editor Settings
+  "buffer_font_size": 12,
+  "buffer_font_family": "Zed Plex Mono",
+
+  // Autosave
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 5000
+    }
+  },
+
+  // Preview Tabs
+  "preview_tabs": {
+    "enable_preview_from_code_navigation": true,
+    "enable_preview_from_file_finder": true,
+    "enabled": true
+  },
+
+  // Input and Line Numbers
+  "show_completions_on_input": true,
+  "relative_line_numbers": false,
+
+  // Project Panel
+  "project_panel": {
+    "auto_fold_dirs": true,
+    "button": true,
+    "indent_size": 5,
+    "git_status": true,
+    "dock": "right"
+  },
+
+  // Terminal Settings
+  "terminal": {
+    "toolbar": {
+      "title": true
+    },
+    "alternate_scroll": "on",
+    "font_family": "Zed Plex Mono",
+    "font_size": 11,
+    "copy_on_select": false,
+    "blinking": "on",
+    "font_features": {
+      "antialias": true
+    }
+  },
+
+  // Formatting
+  "use_on_type_format": true,
+
+  // Inlay Hints
+  "inlay_hints": {
+    "enabled": false,
+    "show_background": true
+  },
+
+  // Assistant Settings
+  "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-3.5-turbo"
+    },
+    "default_height": 340.0,
+    "enabled": true,
+    "button": true,
+    "dock": "right",
+    "default_width": 340,
+    "provider": null,
+    "version": "2"
+  },
+
+  // Git Settings
+  "git": {
+    "enabled": true,
+    "autoFetch": true,
+    "autoFetchInterval": 300,
+    "autoFetchOnFocus": true,
+    "autoFetchOnWindowChange": true,
+    "autoFetchOnBuild": true,
+    "git_status": true,
+    "autoFetchOnBuildEvents": ["build", "run", "debug", "checkout"],
+    "autoFetchOnBuildEventsDelay": 1500,
+    "autoFetchOnBuildDelay": 1500,
+    "git_gutter": "tracked_files",
+    "gutter_debounce": 500
+  },
+
+  // Editor Wrap
+  "soft_wrap": "editor_width",
+
+  // Indent Guides
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 2,
+    "active_line_width": 3,
+    "coloring": "indent_aware",
+    "background_coloring": "disabled"
+  },
+
+  // Prettier Settings
+  "prettier": {
+    "allowed": true,
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": true,
+    "singleAttributePerLine": true,
+    "bracketSameLine": false,
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": true,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
+    "requirePragma": false,
+    "semi": true,
+    "singleQuote": true,
+    "embeddedLanguageFormatting": "auto"
+  },
+  "prettier_eslint": true,
+
+  // Linter and ESLint
+  "linter": "eslint",
+  "bracket_pairing": "always",
+  "eslint": {
+    "enabled": true,
+    "autoFixOnSave": true,
+    "autoFixOnFormat": true,
+    "autoFixOnFormatDelay": 1500
+  },
+
+  // Quit Confirmation
+  "confirm_quit": true,
+
+  // Code Actions
+  "formatter": {
+    "code_actions": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    }
+  },
+
+  // Dock and Layout
+  "default_dock_anchor": "right",
+
+  // Language Configurations
+  "languages": {
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "external": {
+        "command": "prettier",
+        "arguments": ["--stdin-filepath", "{buffer_path}"]
+      }
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "external": {
+        "command": "prettier",
+        "arguments": ["--stdin-filepath", "{buffer_path}"]
+      }
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "external": {
+        "command": "prettier",
+        "arguments": ["--stdin-filepath", "{buffer_path}"]
+      },
+      "format_on_save": "prettier"
+    }
+  },
+
+  // Language Server Protocol
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "codeActionOnSave": {
+          "rules": ["simple-import-sort/imports"]
+        }
+      }
+    }
+  },
+
+  // Copilot Suggestions
+  "show_copilot_suggestions": true,
+
+  // Vim Settings
+  "vim": {
+    "use_system_clipboard": "always",
+    "toggle_relative_line_numbers": true
+  },
+
+  // Centered Layout
+  "centered_layout": {
+    "right_padding": 0.4,
+    "left_padding": 0.4
+  },
+
+  // Tabs
+  "tabs": {
+    "git_status": true,
+    "close_position": "left",
+    "file_icons": true
+  },
+
+  // Syntax Theme Overrides
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic",
+        "color": "#6C8063"  // Soft green for comments
+      },
+      "string": {
+        "color": "#FF6900"  // Orange for strings
+      },
+      "keyword": {
+        "color": "#FFB86C"  // Light orange for keywords
+      },
+      "variable": {
+        "color": "#3FAF10"  // Lemon for variables
+      },
+      "function": {
+        "color": "#8BE9FD"  // Cyan for functions
+      },
+      "number": {
+        "color": "#BD93F9"  // Purple for numbers
+      },
+      "operator": {
+        "color": "#FF79C6"  // Pink for operators
+      },
+      "tag": {
+        "color": "#50FA7B"  // Bright green for HTML/XML tags
+      },
+      "attribute": {
+        "color": "#D6E4D0"  // White for tag attributes
+      },
+      "type": {
+        "color": "#BD93F9"  // Purple for types (e.g., TypeScript types)
+      },
+      "constant": {
+        "color": "#F1FA8C"  // Light yellow for constants
+      },
+      "boolean": {
+        "color": "#FF5555"  // Red for booleans
+      },
+      "property": {
+        "color": "#8BE9FD"  // Cyan for properties
+      },
+      "namespace": {
+        "color": "#F8F8F2"  // Light gray for namespaces
+      },
+      "builtin": {
+        "color": "#FFB86C"  // Light orange for built-in objects
+      }
+    }
+  }
+}
