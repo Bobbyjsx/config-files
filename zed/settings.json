@@ -8,6 +8,10 @@
 // from the command palette or from `Zed` application menu.
 {
   // Language Models
+  "icon_theme": "Catppuccin Latte",
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
   "language_models": {
     "openai": {
       "version": "1",
@@ -17,14 +21,14 @@
   },
 
   // Theme and Mode
-  "theme": "Rosé Pine",
+  "theme": "Catppuccin Latte - No Italics",
   "vim_mode": true,
 
   // UI Settings
-  "ui_font_size": 13,
+  "ui_font_size": 14,
 
   // Editor Settings
-  "buffer_font_size": 12,
+  "buffer_font_size": 11.0,
   "buffer_font_family": "Zed Plex Mono",
 
   // Autosave
@@ -47,10 +51,14 @@
 
   // Project Panel
   "project_panel": {
-    "auto_fold_dirs": true,
+    "auto_fold_dirs": false,
     "button": true,
-    "indent_size": 5,
+    "indent_size": 15,
     "git_status": true,
+    "auto_reveal_entries": true,
+    "scrollbar": {
+      "show": "auto"
+    },
     "dock": "right"
   },
 
@@ -79,10 +87,23 @@
   },
 
   // Assistant Settings
-  "assistant": {
+  "agent": {
+    "always_allow_tool_actions": true,
+    "profiles": {
+      "debug": {
+        "name": "Debug",
+        "tools": {},
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet"
+    },
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-3.5-turbo"
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
     },
     "default_height": 340.0,
     "enabled": true,
@@ -115,8 +136,8 @@
   // Indent Guides
   "indent_guides": {
     "enabled": true,
-    "line_width": 2,
-    "active_line_width": 3,
+    "line_width": 1,
+    "active_line_width": 2,
     "coloring": "indent_aware",
     "background_coloring": "disabled"
   },
@@ -170,12 +191,17 @@
   "languages": {
     "TypeScript": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
+        "source.fixAll.prettier": true,
+        "source.removeUnusedImports": true,
+        "source.sortImports": true,
+        "source.organizeImports": true
       },
       "external": {
         "command": "prettier",
         "arguments": ["--stdin-filepath", "{buffer_path}"]
-      }
+      },
+      "format_on_save": "prettier"
     },
     "JavaScript": {
       "code_actions_on_format": {
@@ -184,12 +210,29 @@
       "external": {
         "command": "prettier",
         "arguments": ["--stdin-filepath", "{buffer_path}"]
-      }
+      },
+      "format_on_save": "prettier"
     },
     "TSX": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
+        "source.sortImports": true
       },
+      "JSON": {
+        "code_actions_on_format": {
+          "source.fixAll.eslint": true,
+          "source.fixAll.prettier": true,
+          "source.removeUnusedImports": true,
+          "source.sortImports": true,
+          "source.organizeImports": true
+        },
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        },
+        "format_on_save": "prettier"
+      },
+
       "external": {
         "command": "prettier",
         "arguments": ["--stdin-filepath", "{buffer_path}"]
@@ -199,11 +242,16 @@
   },
 
   // Language Server Protocol
+  "language_servers": ["...", "!biome"],
   "lsp": {
     "eslint": {
       "settings": {
         "codeActionOnSave": {
-          "rules": ["simple-import-sort/imports"]
+          "rules": [
+            "simple-import-sort/imports",
+            "react/jsx-sort-props",
+            "sort-keys-fix/sort-keys-fix"
+          ]
         }
       }
     }
@@ -229,57 +277,57 @@
     "git_status": true,
     "close_position": "left",
     "file_icons": true
-  },
+  }
 
   // Syntax Theme Overrides
-  "experimental.theme_overrides": {
-    "syntax": {
-      "comment": {
-        "font_style": "italic",
-        "color": "#6C8063"  // Soft green for comments
-      },
-      "string": {
-        "color": "#FF6900"  // Orange for strings
-      },
-      "keyword": {
-        "color": "#FFB86C"  // Light orange for keywords
-      },
-      "variable": {
-        "color": "#3FAF10"  // Lemon for variables
-      },
-      "function": {
-        "color": "#8BE9FD"  // Cyan for functions
-      },
-      "number": {
-        "color": "#BD93F9"  // Purple for numbers
-      },
-      "operator": {
-        "color": "#FF79C6"  // Pink for operators
-      },
-      "tag": {
-        "color": "#50FA7B"  // Bright green for HTML/XML tags
-      },
-      "attribute": {
-        "color": "#D6E4D0"  // White for tag attributes
-      },
-      "type": {
-        "color": "#BD93F9"  // Purple for types (e.g., TypeScript types)
-      },
-      "constant": {
-        "color": "#F1FA8C"  // Light yellow for constants
-      },
-      "boolean": {
-        "color": "#FF5555"  // Red for booleans
-      },
-      "property": {
-        "color": "#8BE9FD"  // Cyan for properties
-      },
-      "namespace": {
-        "color": "#F8F8F2"  // Light gray for namespaces
-      },
-      "builtin": {
-        "color": "#FFB86C"  // Light orange for built-in objects
-      }
-    }
-  }
+  // "experimental.theme_overrides": {
+  //   "syntax": {
+  //     "comment": {
+  //       "font_style": "italic",
+  //       "color": "#6C8063" // Soft green for comments
+  //     },
+  //     "string": {
+  //       "color": "#FF6900" // Orange for strings
+  //     },
+  //     "keyword": {
+  //       "color": "#FFB86C" // Light orange for keywords
+  //     },
+  //     "variable": {
+  //       "color": "#3FAF10" // Lemon for variables
+  //     },
+  //     "function": {
+  //       "color": "#8BE9FD" // Cyan for functions
+  //     },
+  //     "number": {
+  //       "color": "#BD93F9" // Purple for numbers
+  //     },
+  //     "operator": {
+  //       "color": "#FF79C6" // Pink for operators
+  //     },
+  //     "tag": {
+  //       "color": "#50FA7B" // Bright green for HTML/XML tags
+  //     },
+  //     "attribute": {
+  //       "color": "#D6E4D0" // White for tag attributes
+  //     },
+  //     "type": {
+  //       "color": "#BD93F9" // Purple for types (e.g., TypeScript types)
+  //     },
+  //     "constant": {
+  //       "color": "#F1FA8C" // Light yellow for constants
+  //     },
+  //     "boolean": {
+  //       "color": "#FF5555" // Red for booleans
+  //     },
+  //     "property": {
+  //       "color": "#8BE9FD" // Cyan for properties
+  //     },
+  //     "namespace": {
+  //       "color": "#F8F8F2" // Light gray for namespaces
+  //     },
+  //     "builtin": {
+  //       "color": "#FFB86C" // Light orange for built-in objects
+  //     }
+  //   }
+  // }
 }
