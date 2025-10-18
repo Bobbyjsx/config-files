@@ -8,6 +8,40 @@
 // from the command palette or from `Zed` application menu.
 {
   // Language Models
+  "auto_signature_help": true,
+  "scrollbar": {
+    "show": "auto"
+  },
+  "minimap": {
+    "max_width_columns": 51,
+    "current_line_highlight": "all",
+    "thumb_border": "left_open",
+    "thumb": "always",
+    "show": "never"
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "selections_menu": true,
+    "agent_review": true,
+    "code_actions": true
+  },
+  "extend_comment_on_newline": false,
+  "completions": {
+    "lsp_insert_mode": "replace"
+  },
+  "close_on_file_delete": true,
+  "use_system_window_tabs": false,
+  "title_bar": {
+    "show_user_picture": true,
+    "show_onboarding_banner": true,
+    "show_project_items": true,
+    "show_branch_icon": false
+  },
+  "git_panel": {
+    "collapse_untracked_diff": false,
+    "sort_by_path": false,
+    "status_style": "label_color"
+  },
   "icon_theme": "Zed (Default)",
   "features": {
     "edit_prediction_provider": "copilot"
@@ -19,28 +53,28 @@
   },
 
   // Theme and Mode
-  "theme": "One Dark",
+  "theme": "One Light",
   "vim_mode": true,
 
   // UI Settings
-  "ui_font_size": 15,
+  "ui_font_size": 14.5,
 
   // Text buffer font
   "buffer_font_size": 12,
   "buffer_font_family": "JetBrains Mono",
-  "buffer_font_features":  {
+  "buffer_font_features": {
     "liga": true,
-    "calt":true
+    "calt": true
   },
   "buffer_font_weight": 400,
 
   // Editor Settings
-  "ui_font_family": "IBM Plex Sans Var",
-  "ui_font_features":  {
+  "ui_font_family": "IBM Plex Mono",
+  "ui_font_features": {
     "liga": true,
-    "calt":true
+    "calt": true
   },
-  "ui_font_weight": 450,
+  "ui_font_weight": 410.0,
 
   // Autosave
   "autosave": {
@@ -62,9 +96,12 @@
 
   // Project Panel
   "project_panel": {
+    "hide_root": false,
+    "folder_icons": true,
+    "file_icons": true,
     "auto_fold_dirs": false,
     "button": true,
-    "indent_size": 15,
+    "indent_size": 16.0,
     "git_status": true,
     "auto_reveal_entries": true,
     "scrollbar": {
@@ -75,20 +112,20 @@
 
   // Terminal Settings
   "terminal": {
-      "toolbar": {
-        "breadcrumbs": false
-      },
-      "cursor_shape":"bar",
-      "alternate_scroll": "on",
-      "font_family": "JetBrains Mono NL",
-      "line_height": "comfortable",
-      "font_size": 12,
-      "copy_on_select": false,
-      "blinking": "on",
-      "font_features": {
-        "antialias":false
-      }
+    "toolbar": {
+      "breadcrumbs": false
     },
+    "cursor_shape": "bar",
+    "alternate_scroll": "on",
+    "font_family": "JetBrains Mono NL",
+    "line_height": "comfortable",
+    "font_size": 12,
+    "copy_on_select": false,
+    "blinking": "on",
+    "font_features": {
+      "antialias": false
+    }
+  },
 
   // Formatting
   "use_on_type_format": true,
@@ -98,16 +135,21 @@
     "enabled": false,
     "show_background": true
   },
-  "linked_edits": true,
-  // "edit_predictions": {
-  //   "copilot": {
-  // 	"proxy": null,
-  // 	"proxy_no_verify": null,
-  // 	"enterprise_uri": null
-  //   }
-  // },
+
   // Assistant Settings
+  "linked_edits": true,
+  "show_edit_predictions": true,
+  "edit_predictions": {
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null
+    }
+  },
   "agent": {
+    "play_sound_when_agent_done": true,
+    "default_profile": "ask",
     "always_allow_tool_actions": true,
     "profiles": {
       "debug": {
@@ -119,11 +161,11 @@
     },
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet"
+      "model": "gpt-4.1"
     },
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet"
+      "model": "claude-sonnet-4"
     },
     "default_height": 340.0,
     "enabled": true,
@@ -134,16 +176,15 @@
 
   // Git Settings
   "git": {
-    // "enabled": true,
-    // "autoFetch": true,
-    // "autoFetchInterval": 300,
-    // "autoFetchOnFocus": true,
-    // "autoFetchOnWindowChange": true,
-    // "autoFetchOnBuild": true,
-    // "git_status": true,
-    // "autoFetchOnBuildEvents": ["build", "run", "debug", "checkout"],
-    // "autoFetchOnBuildEventsDelay": 1500,
-    // "autoFetchOnBuildDelay": 1500,
+    "branch_picker": {
+      "show_author_name": true
+    },
+    "blame": {
+      "show_avatar": true
+    },
+    "inline_blame": {
+      "show_commit_summary": true
+    },
     "git_gutter": "tracked_files",
     "gutter_debounce": 500
   },
@@ -179,31 +220,22 @@
     "singleQuote": true,
     "embeddedLanguageFormatting": "auto"
   },
-  // "prettier_eslint": true,
-
-  // Linter and ESLint
-  // "linter": "eslint",
-  // "bracket_pairing": "always",
-  // "eslint": {
-  //   "enabled": true,
-  //   "autoFixOnSave": true,
-  //   "autoFixOnFormat": true,
-  //   "autoFixOnFormatDelay": 1500
-  // },
 
   // Quit Confirmation
   "confirm_quit": true,
 
   // Code Actions
-  "formatter": {
-    "code_actions": {
-      "source.fixAll.eslint": true,
-      "source.organizeImports": true
-    }
-  },
+  "formatter": "language_server",
 
-  // Dock and Layout
-  // "default_dock_anchor": "right",
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true,
+    "source.removeUnusedImports": true,
+    "quickfix.biome": true,
+    "source.action.useSortedKeys.biome": true,
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true
+  },
 
   // Language Configurations
   "languages": {
@@ -221,32 +253,39 @@
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
       },
-      "format_on_save": "prettier"
+      "format_on_save": "on"
     },
     "JavaScript": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
+        "source.fixAll.prettier": true,
+        "source.removeUnusedImports": true,
+        "source.sortImports": true,
+        "source.organizeImports": true
       },
       "formatter": {
         "external": {
           "command": "prettier",
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
-       },
-      "format_on_save": "prettier"
+      },
+      "format_on_save": "on"
     },
     "TSX": {
       "code_actions_on_format": {
         "source.fixAll.eslint": true,
-        "source.sortImports": true
+        "source.fixAll.prettier": true,
+        "source.removeUnusedImports": true,
+        "source.sortImports": true,
+        "source.organizeImports": true
       },
       "formatter": {
         "external": {
           "command": "prettier",
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
-       },
-      "format_on_save": "prettier"
+      },
+      "format_on_save": "on"
     },
     "JSON": {
       "code_actions_on_format": {
@@ -261,38 +300,52 @@
           "command": "prettier",
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
-       },
-      "format_on_save": "prettier"
+      },
+      "format_on_save": "on"
     },
 
     "Python": {
+      "indent_guides": {
+        "background_coloring": "disabled"
+      },
+      "show_edit_predictions": true,
       "language_servers": ["ruff", "..."],
-      "formatter": [
-        {
-          "external": {
-            "command": "ruff",
-            "arguments": [
-              "check",
-              "--exit-zero",
-              "--fix",
-              "--stdin-filename",
-              "{buffer_path}",
-              "-"
-            ]
-          }
-        },
-        {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
-        },
-        {
-          "language_server":{
-            "name": "ruff"
-          }
+      "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+        "source.fixAll.ruff": true
+      },
+      "format_on_save": "on"
+
+      // {
+      //     "external": {
+      //       "command": "ruff",
+      //       "arguments": [
+      //         "check",
+      //         "--exit-zero",
+      //         "--fix",
+      //         "--stdin-filename",
+      //         "{buffer_path}",
+      //         "-"
+      //       ]
+      //     }
+      //   },
+    },
+    "JSONC": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.prettier": true,
+        "source.removeUnusedImports": true,
+        "source.sortImports": true,
+        "source.organizeImports": true
+      },
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
-      ]
+      },
+      "format_on_save": "on"
     }
   },
 
@@ -311,36 +364,35 @@
       }
     },
     "ruff": {
-       "initialization_options": {
-         "settings": {
-           "configuration": "pyproject.toml"
-         }
-       }
-     },
-    "pyright": {
-         "settings": {
-           "python": {
-             "pythonPath": ".venv/bin/python"
-           }
-         }
+      "initialization_options": {
+        "settings": {
+          "configuration": "pyproject.toml"
+        }
       }
+    },
+    "pyright": {
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    }
   },
 
   "diagnostics": {
-	"button": true,
-	"include_warnings": true,
-	"lsp_pull_diagnostics": {
-		"enabled": true,
-		"debounce_ms": 50
-	},
-	"inline": {
-		"enabled": true,
-		"update_debounce_ms": 150,
-		"padding": 4,
-		"min_column": 0,
-		"max_severity": null
-	},
-	"cargo": null
+    "button": true,
+    "include_warnings": true,
+    "lsp_pull_diagnostics": {
+      "enabled": true,
+      "debounce_ms": 50
+    },
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    }
   },
 
   // Vim Settings
