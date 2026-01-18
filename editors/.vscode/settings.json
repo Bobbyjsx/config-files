@@ -1,27 +1,21 @@
 {
- "biome.configPath": "../biome.jsonc",
- "cSpell.words": [
-  "datepicker",
-  "heroicons",
-  "RECAPTCHA",
-  "sitekey",
-  "Subaccount"
- ],
- "editor.codeActionsOnSave": {
-  "quickfix.biome": "explicit",
-  "source.action.useSortedKeys.biome": "explicit",
-  "source.fixAll.biome": "explicit",
-  "source.organizeImports.biome": "explicit"
- },
- "editor.defaultFormatter": "biomejs.biome",
- "editor.formatOnPaste": true,
- "editor.formatOnSave": true,
- "editor.tabSize": 2,
- "emmet.showExpandedAbbreviation": "never",
- "typescript.enablePromptUseWorkspaceTsdk": true,
- "typescript.preferences.autoImportFileExcludePatterns": [
-  "next/router.d.ts",
-  "next/dist/client/router.d.ts"
- ],
- "typescript.tsdk": "node_modules/typescript/lib"
+  "biome.configurationPath": "../biome.jsonc",
+  "biome.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.action.useSortedKeys.biome": "explicit",
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit",
+    "source.removeUnusedImports": "explicit"
+  },
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "emmet.showExpandedAbbreviation": "never",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "next/router.d.ts",
+    "next/dist/client/router.d.ts"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
